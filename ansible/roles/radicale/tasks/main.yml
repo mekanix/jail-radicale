@@ -1,0 +1,6 @@
+---
+- name: install radicale packages
+  with_items: "{{ radicale_packages }}"
+  pkgng:
+    name: "{{ item.name }}"
+    state: present

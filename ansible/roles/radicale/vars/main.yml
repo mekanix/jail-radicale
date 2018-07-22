@@ -1,0 +1,3 @@
+---
+radicale_packages:
+  - name: py36-radicale2
