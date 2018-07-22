@@ -1,0 +1,21 @@
+---
+- name: install radicale packages
+  with_items: "{{ radicale_packages }}"
+  package:
+    name: "{{ item.name }}"
+  notify:
+    - restart radicale
+
+- name: enable radicale
+  template:
+    src: radicale.j2
+    dest: /etc/rc.conf.d/radicale
+  notify:
+    - restart radicale
+
+- name: configure radicale
+  template:
+    src: config.j2
+    dest: /usr/local/etc/radicale/config
+  notify:
+    - restart radicale

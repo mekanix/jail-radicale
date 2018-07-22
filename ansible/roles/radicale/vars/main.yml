@@ -1,0 +1,3 @@
+---
+radicale_packages:
+  - name: "{{ python_prefix }}-radicale"
